@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/rlim406/news-scraper/issues"
   },
-  "homepage": "https://github.com/rlim406/news-scraper#readme"
+  "homepage": "https://github.com/rlim406/news-scraper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "exphbs": "^1.2.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "logger": "0.0.1",
+    "mongoose": "^5.3.4",
+    "morgan": "^1.9.1"
+  }
 }
