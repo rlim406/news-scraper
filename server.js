@@ -17,11 +17,11 @@ mongoose.connect("mongodb://localhost/news_db", { useNewUrlParser: true });
 
 app.get("/scrape", function (req, res) {
   // First, we grab the body of the html with axios
-  axios.get("https://www.ctvnews.ca/").then(function (response) {
+  axios.get("https://slashdot.org/").then(function (response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
 
-    $("li.listItem_7_289373_1539274621_475360489").each(function (i, element) {
+    $("span.story-title").each(function (i, element) {
       // Save an empty result object
       var result = {};
 
