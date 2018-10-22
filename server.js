@@ -95,7 +95,7 @@ app.get("/articles/:id", function (req, res) {
 });
 
 // Route for saving/updating an Article's associated Note
-app.post("/submit", function (req, res) {
+app.post("/articles/:id", function (req, res) {
   // Create a new note and pass the req.body to the entry
   db.Note.create(req.body)
     .then(function (dbNote) {
