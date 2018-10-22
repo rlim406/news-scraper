@@ -6,6 +6,14 @@ $.getJSON("/articles", function (data) {
     $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
   }
 });
+// Grab the notes as a json
+$.getJSON("/notes", function (data) {
+  // For each one
+  for (var i = 0; i < data.length; i++) {
+    // Display the apropos information on the page
+    $("#savedNotes").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].body + "</p>");
+  }
+});
 
 
 // Whenever someone clicks a p tag
