@@ -114,6 +114,26 @@ app.post("/articles/:id", function (req, res) {
     });
 });
 
+app.get("/delete/:id", function (req, res) {
+
+  db.Notes.remove(
+    {
+      _id: mongojs.ObjectID(req.params.id)
+    },
+    function (error, removed) {
+
+      if (error) {
+        console.log(error);
+        res.send(error);
+      }
+      else {
+
+        console.log(removed);
+        res.send(removed);
+      }
+    }
+  );
+});
 // Start the server
 app.listen(PORT, function () {
   console.log("App running on port " + PORT + "!");
